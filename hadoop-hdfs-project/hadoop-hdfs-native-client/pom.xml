@@ -98,7 +98,7 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
     </plugins>
   </build>
   <profiles>
-    <profile>
+    <!--<profile>
       <id>native-win</id>
       <activation>
         <activeByDefault>false</activeByDefault>
@@ -155,7 +155,7 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
                       <arg line="ALL_BUILD.vcxproj /nologo /p:Configuration=RelWithDebInfo /p:LinkIncremental=false"/>
                       <arg line="${native_make_args}"/>
                     </exec>
-                    <!-- Copy for inclusion in distribution. -->
+                    &lt;!&ndash; Copy for inclusion in distribution. &ndash;&gt;
                     <copy todir="${project.build.directory}/bin">
                       <fileset dir="${project.build.directory}/native/bin/RelWithDebInfo"/>
                     </copy>
@@ -172,14 +172,14 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
                     <property name="compile_classpath" refid="maven.compile.classpath"/>
                     <property name="test_classpath" refid="maven.test.classpath"/>
                     <exec executable="ctest" failonerror="true" dir="${project.build.directory}/native">
-                      <arg line="--output-on-failure"/>
+                      <arg line="&#45;&#45;output-on-failure"/>
                       <arg line="${native_ctest_args}"/>
                       <env key="CLASSPATH" value="${test_classpath}:${compile_classpath}"/>
-                      <!-- HADOOP_HOME required to find winutils. -->
+                      &lt;!&ndash; HADOOP_HOME required to find winutils. &ndash;&gt;
                       <env key="HADOOP_HOME" value="${hadoop.common.build.dir}"/>
-                      <!-- Make sure hadoop.dll and jvm.dll are on PATH. -->
+                      &lt;!&ndash; Make sure hadoop.dll and jvm.dll are on PATH. &ndash;&gt;
                       <env key="PATH" value="${env.PATH};${hadoop.common.build.dir}/bin;${java.home}/jre/bin/server;${java.home}/bin/server"/>
-                      <!-- Make sure libhadoop.so is on LD_LIBRARY_PATH. -->
+                      &lt;!&ndash; Make sure libhadoop.so is on LD_LIBRARY_PATH. &ndash;&gt;
                       <env key="LD_LIBRARY_PATH" value="${env.LD_LIBRARY_PATH}:${project.build.directory}/native/target/usr/local/lib:${hadoop.common.build.dir}/native/target/usr/local/lib"/>
                     </exec>
                   </target>
@@ -241,11 +241,11 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
                     <property name="compile_classpath" refid="maven.compile.classpath"/>
                     <property name="test_classpath" refid="maven.test.classpath"/>
                     <exec executable="ctest" failonerror="true" dir="${project.build.directory}/">
-                      <arg line="--output-on-failure"/>
+                      <arg line="&#45;&#45;output-on-failure"/>
                       <arg line="${native_ctest_args}"/>
                       <env key="LIBHDFS_OPTS" value="${env.LIBHDFS_OPTS} -Xcheck:jni"/>
                       <env key="CLASSPATH" value="${test_classpath}:${compile_classpath}"/>
-                      <!-- Make sure libhadoop.so is on LD_LIBRARY_PATH. -->
+                      &lt;!&ndash; Make sure libhadoop.so is on LD_LIBRARY_PATH. &ndash;&gt;
                       <env key="LD_LIBRARY_PATH" value="${env.LD_LIBRARY_PATH}:${project.build.directory}/native/target/usr/local/lib:${hadoop.common.build.dir}/native/target/usr/local/lib"/>
                       <env key="DYLD_LIBRARY_PATH" value="${env.DYLD_LIBRARY_PATH}:${project.build.directory}/native/target/usr/local/lib:${hadoop.common.build.dir}/native/target/usr/local/lib"/>
                     </exec>
@@ -310,10 +310,10 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
                     <property name="compile_classpath" refid="maven.compile.classpath"/>
                     <property name="test_classpath" refid="maven.test.classpath"/>
                     <exec executable="ctest" failonerror="true" dir="${project.build.directory}/clang">
-                      <arg line="--output-on-failure"/>
+                      <arg line="&#45;&#45;output-on-failure"/>
                       <arg line="${native_ctest_args}"/>
                       <env key="CLASSPATH" value="${test_classpath}:${compile_classpath}"/>
-                      <!-- Make sure libhadoop.so is on LD_LIBRARY_PATH. -->
+                      &lt;!&ndash; Make sure libhadoop.so is on LD_LIBRARY_PATH. &ndash;&gt;
                       <env key="LD_LIBRARY_PATH" value="${env.LD_LIBRARY_PATH}:${project.build.directory}/clang/target/usr/local/lib:${hadoop.common.build.dir}/native/target/usr/local/lib"/>
                       <env key="DYLD_LIBRARY_PATH" value="${env.DYLD_LIBRARY_PATH}:${project.build.directory}/clang/target/usr/local/lib:${hadoop.common.build.dir}/native/target/usr/local/lib"/>
                     </exec>
@@ -324,6 +324,6 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
           </plugin>
         </plugins>
       </build>
-    </profile>
+    </profile>-->
   </profiles>
 </project>

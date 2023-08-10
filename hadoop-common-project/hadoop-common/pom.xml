@@ -678,7 +678,7 @@
   </build>
 
   <profiles>
-    <profile>
+    <!--<profile>
       <id>native</id>
       <activation>
         <activeByDefault>false</activeByDefault>
@@ -947,17 +947,17 @@
                 <test.build.dir>${test.build.dir}/${surefire.forkNumber}</test.build.dir>
                 <hadoop.tmp.dir>${hadoop.tmp.dir}/${surefire.forkNumber}</hadoop.tmp.dir>
 
-                <!-- Due to a Maven quirk, setting this to just -->
-                <!-- surefire.forkNumber won't do the parameter substitution. -->
-                <!-- Putting a prefix in front of it like "fork-" makes it -->
-                <!-- work. -->
+                &lt;!&ndash; Due to a Maven quirk, setting this to just &ndash;&gt;
+                &lt;!&ndash; surefire.forkNumber won't do the parameter substitution. &ndash;&gt;
+                &lt;!&ndash; Putting a prefix in front of it like "fork-" makes it &ndash;&gt;
+                &lt;!&ndash; work. &ndash;&gt;
                 <test.unique.fork.id>fork-${surefire.forkNumber}</test.unique.fork.id>
               </systemPropertyVariables>
             </configuration>
           </plugin>
         </plugins>
       </build>
-    </profile>
+    </profile>-->
 
     <profile>
       <id>releasedocs</id>

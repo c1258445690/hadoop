@@ -291,6 +291,8 @@
                         <configuration>
                             <nodeVersion>${nodejs.version}</nodeVersion>
                             <yarnVersion>${yarnpkg.version}</yarnVersion>
+                            <!--<nodeDownloadRoot>http://nodejs.org/dist</nodeDownloadRoot>
+                            <yarnDownloadRoot></yarnDownloadRoot>-->
                         </configuration>
                     </execution>
                     <execution>
@@ -298,6 +300,9 @@
                         <goals>
                             <goal>yarn</goal>
                         </goals>
+                        <configuration>
+                            <npmRegistryURL>https://registry.npm.taobao.org</npmRegistryURL>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

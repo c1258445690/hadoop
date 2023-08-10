@@ -177,7 +177,7 @@
         difficult to debug classpath errors for downstream. Unfortunately, that
         means inspecting all the jars.
         -->
-      <plugin>
+      <!--<plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <executions>
@@ -197,7 +197,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
     </plugins>
   </build>
 
